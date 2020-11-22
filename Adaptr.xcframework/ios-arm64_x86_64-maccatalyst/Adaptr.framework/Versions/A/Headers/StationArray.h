@@ -3,7 +3,7 @@
 //  FeedMediaCore
 //
 //  Created by Eric Lambrecht on 8/16/18.
-//  Copyright © 2018 Feed Media. All rights reserved.
+//  Copyright ©   2020 Adaptr All rights reserved.
 //
 
 #ifndef StationARRAY_H

@@ -3,11 +3,11 @@
 //  iOS-UI-SDK
 //
 //  This class extends UIProgressView so that it updates its progress
-//  automatically by listening to events from the FeedMedia
+//  automatically by listening to events from the Adaptr
 //  player.
 //
 //  Created by Eric Lambrecht on 3/10/15.
-//  Copyright (c) 2015 Feed Media. All rights reserved.
+//  Copyright (c) 2015  2020 Adaptr All rights reserved.
 //
 
 /**

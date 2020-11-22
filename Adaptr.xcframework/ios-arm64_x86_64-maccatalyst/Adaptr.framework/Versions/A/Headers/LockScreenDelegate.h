@@ -1,16 +1,16 @@
 //
 //  FMLockScreenDelegate.h
-//  FeedMediaCore
+//
 //
 //  Created by Eric Lambrecht on 4/18/17.
-//  Copyright © 2017 Feed Media. All rights reserved.
+//  Copyright ©   2020 Adaptr All rights reserved.
 //
 
 #ifndef LockScreenDelegate_h
 #define LockScreenDelegate_h
 
 /**
- If you don't want the Feedfm SDK to fully manage lock screen metadata
+ If you don't want the Adaptr SDK to fully manage lock screen metadata
  and the display of feedback command buttons, then pass the AdaptrAudioPlayer an
  FMLockScreenDelegate. When the AdaptrAudioPlayer wants to update the lock screen 
  it will, instead, call this delegate, which is expected to update the 
@@ -26,7 +26,7 @@
 @protocol LockScreenDelegate<NSObject>
 
 /**
- This method is called when the Feedfm SDK wishes to update the
+ This method is called when the Adaptr SDK wishes to update the
  MPNowPlayingInfoCenter metadata. 
  
  The dictionary passed in is suitable
@@ -43,12 +43,12 @@
  
  note that these keys may be missing if no song is playing
  
- ** NOTE ** all apps powered by the Feed.fm SDK _must_ display song
+ ** NOTE ** all apps powered by the Adaptr SDK _must_ display song
  title, artist, and album information on the lock screen, per
  our music licenses.
  
  To exactly duplicate the default handling of the MPNowPlayingInfoCenter
- data by the Feedfm SDK, you would implement this method as:
+ data by the Adaptr SDK, you would implement this method as:
  
     [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = info;
  

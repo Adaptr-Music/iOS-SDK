@@ -3,7 +3,7 @@
 //  FeedMedia
 //
 //  Created by Eric Lambrecht on 9/21/17.
-//  Copyright © 2017 Feed Media. All rights reserved.
+//  Copyright ©   2020 Adaptr All rights reserved.
 //
 
 #import "StationCrossfader.h"

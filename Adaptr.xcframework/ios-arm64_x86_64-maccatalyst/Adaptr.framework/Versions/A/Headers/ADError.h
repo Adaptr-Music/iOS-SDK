@@ -3,7 +3,7 @@
 //  sdktest
 //
 //  Created by James Anthony on 3/12/13.
-//  Copyright (c) 2013-2016 Feed Media, Inc. All rights reserved.
+//  Copyright (c) 2020 Adaptr All rights reserved.
 //
 
 extern NSString * const APIErrorDomain;

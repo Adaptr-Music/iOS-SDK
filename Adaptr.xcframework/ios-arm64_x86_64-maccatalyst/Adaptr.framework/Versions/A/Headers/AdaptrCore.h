@@ -3,10 +3,10 @@
 //  FeedMediaCore
 //
 //  Created by Eric Lambrecht on 9/6/17.
-//  Copyright © 2017 Feed Media. All rights reserved.
+//  Copyright ©   2020 Adaptr All rights reserved.
 //
 
-#define ADAPTR_CLIENT_VERSION @"0.0.1"
+#define ADAPTR_CLIENT_VERSION @"0.1.0"
 
 // All public headers
 

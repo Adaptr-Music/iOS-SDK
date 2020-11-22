@@ -3,7 +3,7 @@
 //  sdktest
 //
 //  Created by James Anthony on 3/7/13.
-//  Copyright (c) 2013-2016 Feed Media, Inc. All rights reserved.
+//  Copyright (c) 2020 Adaptr All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -314,7 +314,7 @@ typedef NS_ENUM(NSInteger, MixingAudioPlayerCompletionReason) {
 - (void) mixingAudioPlayerPlaybackDidElapse: (CMTime) elapsedTime;
 
 /**
- * Report errors back to Feed.fm
+ * Report errors back to adaptr
  */
 
 - (void) mixingAudioPlayerError: (NSString * _Nullable) description;
@@ -499,27 +499,27 @@ typedef NS_ENUM(NSInteger, MixingAudioPlayerCompletionReason) {
 
 
 /**
- When events are reported to the feed.fm servers via
+ When events are reported to the adaptr servers via
  `[AdaptrAudioPlayer logEvent]` and `[AdaptrAudioPlayer logEvent:withParameters]`,
  those events will also be reported to any class implementing
  this protocol and assigned to the `[AdaptrAudioPlayer logger]` property.
  
  The SDK uses the `[AdaptrAudioPlayer logEvent]` internally, so this
- is an interface for apps to receive copies of events that feed.fm
+ is an interface for apps to receive copies of events that adaptr
  tracks internally so they may be passed on to other logging frameworks.
  
 */
 
 @protocol AdaptrAudioPlayerLogger<NSObject>
 /**
- *  Everything logged here goes back to Feed.fm and is also cc'd to the 'logger' property
+ *  Everything logged here goes back to Adaptr and is also cc'd to the 'logger' property
  *
  *  @param event Log message
  */
 - (void)logEvent: (nonnull NSString *)event;
 
 /**
- *  Everything logged here goes back to Feed.fm and is also cc'd to the 'logger' property
+ *  Everything logged here goes back to Adaptr and is also cc'd to the 'logger' property
  *
  *  @param event      Log message
  *  @param parameters Parameters
@@ -544,7 +544,7 @@ typedef NS_ENUM(NSInteger, MixingAudioPlayerCompletionReason) {
 
      [AdaptrAudioPlayer setclientToken:@"demo" secret:@"demo"]
 
- to asynchronously contact the feed.fm servers, validate that the client is in a location
+ to asynchronously contact the Adaptr servers, validate that the client is in a location
  that can legally stream music, and kick of a thread to retrieve a list of available
  streaming music stations.
  
@@ -553,7 +553,7 @@ typedef NS_ENUM(NSInteger, MixingAudioPlayerCompletionReason) {
  token and secret to get the desired behavior:
  
  - 'demo' - 3 simple stations with no skip limits
- - 'badgeo' - feed.fm will treat this client as if it were accessing from outside the US
+ - 'badgeo' - Adaptr will treat this client as if it were accessing from outside the US
  - 'counting' - a station that just plays really short audio clips
    of a voice saying the numbers 0 through 9
 
@@ -624,11 +624,6 @@ typedef NS_ENUM(NSInteger, MixingAudioPlayerCompletionReason) {
  methods: `logEvent:` and `logEvent:withParameters:`,
  and assign the object to `[FeedMedia sharedPlayer].logger`.
  
- For assistance with building music player UI, check out the
- [UI library](http://demo.feed.fm/sdk/docs/ios/ui/latest/html)
- documentation and check out our demo app:
- 
- [https://github.com/feedfm/iOS-RadioPlayer](https://github.com/feedfm/iOS-RadioPlayer)
 */
 
 @interface AdaptrAudioPlayer : NSObject
@@ -639,7 +634,7 @@ typedef NS_ENUM(NSInteger, MixingAudioPlayerCompletionReason) {
 
 /**
  * This method kicks off asynchronous initialization of the library and communication
- * with the feed.fm servers. This call should be made as early as possible
+ * with the Adaptr servers. This call should be made as early as possible
  * in the lifecycle of the app.
  *
  * @param token public authentication token. Use `@"demo"` during testing/development.
@@ -670,13 +665,13 @@ typedef NS_ENUM(NSInteger, MixingAudioPlayerCompletionReason) {
  * Just before the onAvailable callback is made, the list of available stations
  * is fully populated.
  *
- * Note that the callbacks are only made after attempting to contact the Feed.fm
+ * Note that the callbacks are only made after attempting to contact the Adaptr
  * servers, even if local offline music is available while waiting for a
- * response. If the player is unable to contact the Feed.fm servers or they
+ * response. If the player is unable to contact the Adaptr servers or they
  * respond that no streaming music is available, but there is local offline music,
  * then the onAvailable callback will be called.
  *
- * If the player has already contacted (or failed to contact) the feed.fm
+ * If the player has already contacted (or failed to contact) the Adaptr
  * servers, then one of the two calls passed callbacks will be called immediately,
  * before this method returns.
  *
@@ -971,7 +966,7 @@ typedef NS_ENUM(NSInteger, MixingAudioPlayerCompletionReason) {
  Stations listed here are available for playback even if there is no
  network connectivity, and this property is intialized as soon as the
  `AdaptrAudioPlayer` is created (before any attempt is made to contact
- the feed.fm servers.
+ the Adaptr servers.
  
  When there is internet connectivity, every station in this list will
  have a paired station (with the same name, but not necessarily same ID)
@@ -1156,14 +1151,14 @@ typedef NS_ENUM(NSInteger, MixingAudioPlayerCompletionReason) {
 @property (nonatomic, weak, nullable) id<AdaptrAudioPlayerLogger> logger;
 
 /**
- *  Everything logged here goes back to Feed.fm and is also cc'd to the `logger` property
+ *  Everything logged here goes back to Adaptr and is also cc'd to the `logger` property
  *
  *  @param event Log message
  */
 - (void) logEvent: (nonnull NSString *)event;
 
 /**
- *  Everything logged here goes back to Feed.fm and is also cc'd to the `logger` property
+ *  Everything logged here goes back to Adaptr and is also cc'd to the `logger` property
  *
  *  @param event      Log message
  *  @param parameters Parameters
@@ -1230,7 +1225,7 @@ typedef NS_ENUM(NSInteger, MixingAudioPlayerCompletionReason) {
 @property (nonatomic) BOOL disableSongStartNotifications;
 
 /**
- * If YES (the default), then the Feed.fm library will
+ * If YES (the default), then the Adaptr library will
  * register with the MPRemoteCommandCenter to handle play/pause/skip/like/dislike
  * commands upon start of playback. 
  */
@@ -1433,11 +1428,11 @@ typedef NS_ENUM(NSInteger, MixingAudioPlayerCompletionReason) {
 
 /**
  * This method sends all Feed SDK generated logs since the start of the application
- * to feed.fm for manual debugging. If you are experiencing unexpected behavior with the
+ * to Adaptr for manual debugging. If you are experiencing unexpected behavior with the
  * SDK, call this method after the bad behavior occurs and let your customer support
  * person at feed know what value you passed for 'label'.
  *
- * @param label a unique label to assist feed.fm engineers in finding this specific log
+ * @param label a unique label to assist Adaptr engineers in finding this specific log
  */
 
 - (void) submitLogsForRemoteDebuggingWithLabel: (nonnull NSString *) label;

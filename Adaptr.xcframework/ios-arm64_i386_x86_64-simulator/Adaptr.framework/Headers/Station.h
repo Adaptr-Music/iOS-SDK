@@ -3,13 +3,13 @@
 //  sdktest
 //
 //  Created by James Anthony on 3/11/13.
-//  Copyright (c) 2013-2016 Feed Media, Inc. All rights reserved.
+//  Copyright (c) 2020 Adaptr All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 /**
- * This object represents a Feed.fm radio station, from which songs are
+ * This object represents a Adaptr radio station, from which songs are
  * retrieved. 
  *
  * After an `AdaptrAudioPlayer` is initialized, a list of available stations
@@ -17,7 +17,7 @@
  *
  * The `-options` dictionary contains arbitrary metadata about this station
  * that is passed on from the server, such as: background imagery, descriptive
- * text, keywords, e.t.c. Talk to feed.fm to have these values set to
+ * text, keywords, e.t.c. Talk to Adaptr to have these values set to
  * whatever you wish.
  **/
 
@@ -39,7 +39,7 @@
 @property (readonly, nonnull) NSString *identifier;
 
 /**
- *  Options dictionary. Contact feed.fm to have data specific to your app
+ *  Options dictionary. Contact Adaptr to have data specific to your app
  *  appear here!
  */
 

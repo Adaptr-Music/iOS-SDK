@@ -3,7 +3,7 @@
 //  FeedMediaCore
 //
 //  Created by Arveen kumar on 8/11/20.
-//  Copyright © 2020 Feed Media. All rights reserved.
+//  Copyright © 2020  2020 Adaptr All rights reserved.
 //
 
 #ifndef FMSimulcastPlayer_h

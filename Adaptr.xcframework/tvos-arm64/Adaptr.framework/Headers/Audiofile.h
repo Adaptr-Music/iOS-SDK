@@ -3,7 +3,7 @@
 //  sdktest
 //
 //  Created by James Anthony on 3/7/13.
-//  Copyright (c) 2013-2016 Feed Media, Inc. All rights reserved.
+//  Copyright (c) 2020 Adaptr All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

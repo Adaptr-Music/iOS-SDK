@@ -2,7 +2,7 @@
 //  FMEqualizer.m
 //
 //  Created by Eric Lambrecht on 1/25/16.
-//  Copyright © 2016 Feed Media, Inc. All rights reserved.
+//  Copyright © 2020 Adaptr All rights reserved.
 //
 
 #import "Equalizer.h"
