@@ -123,7 +123,25 @@ extern NSString *const AdaptrAudioPlayerStationDownloadProgress;
  *  @const AdaptrAudioPlayerStationListKey
  *  userInfo key for NSArray of Stations from <AdaptrAudioPlayerStationListAvailableNotification>
  */
+
 extern NSString *const AdaptrAudioPlayerStationListKey;
+
+/**
+ *  @const AdaptrAudioPlayerTracksAvailableForStation
+ *  userInfo key for NSArray of Tracks for a Station.
+ *
+ */
+
+extern NSString *const AdaptrAudioPlayerTracksAvailableForStation;
+
+/**
+ *  @const AdaptrAudioPlayerResultsAvailableForSearch
+ *  userInfo key for NSArray of AudioFiles for a search performed.
+ */
+
+extern NSString *const AdaptrAudioPlayerResultsAvailableForSearch;
+
+
 
 /**
  * @const AudiofileKey

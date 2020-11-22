@@ -18,7 +18,7 @@
 /**
  * Playback state of Simulcast player
  */
-typedef NS_ENUM(NSInteger, FMSimulcastPlaybackState) {
+typedef NS_ENUM(NSInteger, SimulcastPlaybackState) {
 
     /**
      * Idle state.
@@ -56,12 +56,12 @@ typedef NS_ENUM(NSInteger, FMSimulcastPlaybackState) {
  * Delegate that should be implemented for simulcast streaming either in Studio or Overlay.
  * The methods update the status of the player.
  */
-@protocol FMSimulcastDelegate
+@protocol SimulcastDelegate
 
 /**
  * State of the Player has changed
  */
--(void) stateChanged : (FMSimulcastPlaybackState) state;
+-(void) stateChanged : (SimulcastPlaybackState) state;
 
 /**
  * Current playing item has changed
@@ -87,13 +87,13 @@ typedef NS_ENUM(NSInteger, FMSimulcastPlaybackState) {
 /**
  * This class deals with Simulcast streaming and can be directly initialized and used independently of the AdaptrAudioPlayer with just a token.
  */
-@interface FMSimulcastStreamer : NSObject
+@interface SimulcastStreamer : NSObject
 
 /**
  * Current State of the Player.
  */
 
-@property (nonatomic) FMSimulcastPlaybackState state;
+@property (nonatomic) SimulcastPlaybackState state;
 
 /**
  * Current item that we're trying to play
@@ -116,19 +116,19 @@ typedef NS_ENUM(NSInteger, FMSimulcastPlaybackState) {
  *
  */
 -(id _Nonnull) initSimulcastWithToken : (NSString *_Nonnull) token
-                         withDelegate : (id<FMSimulcastDelegate> _Nonnull) delegate;
+                         withDelegate : (id<SimulcastDelegate> _Nonnull) delegate;
                           
 
 /**
  * Regester another delegate to listen to stream events
  */
--(void) registerDelegate: (id<FMSimulcastDelegate> _Nonnull) delegate;
+-(void) registerDelegate: (id<SimulcastDelegate> _Nonnull) delegate;
 
 /**
  * Remove a registered delegate
  */
 
--(void) unregisterDelegate: (id<FMSimulcastDelegate> _Nonnull) delegate;
+-(void) unregisterDelegate: (id<SimulcastDelegate> _Nonnull) delegate;
 
 /**
  * Connect to and begin playback of the remote stream

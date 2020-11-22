@@ -1,6 +1,0 @@
-framework module Adaptr {
-  umbrella header "Adaptr.h"
-
-  export *
-  module * { export * }
-}
