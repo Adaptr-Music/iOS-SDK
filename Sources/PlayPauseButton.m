@@ -126,7 +126,7 @@
         Station *currentStation = _feedPlayer.activeStation;
         
         if (![_station isEqual:currentStation]) {
-            [_feedPlayer setActiveStation:_station withCrossfade:_crossfade];
+            [_feedPlayer loadStation:_station withCrossfade:_crossfade];
             [_feedPlayer play];
             
             return;

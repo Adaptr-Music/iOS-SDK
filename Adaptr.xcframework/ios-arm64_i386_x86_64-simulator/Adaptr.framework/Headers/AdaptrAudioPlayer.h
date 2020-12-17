@@ -16,6 +16,7 @@
 #import "AdaptrAudioPlayer.h"
 #import "LockScreenDelegate.h"
 #import "StationArray.h"
+#import "PlayList.h"
 
 #if TARGET_OS_TV || TARGET_OS_MACCATALYST
 #else
@@ -1010,21 +1011,21 @@ typedef NS_ENUM(NSInteger, MixingAudioPlayerCompletionReason) {
 
 @property (nonatomic, copy, nonnull) Station *activeStation;
 
-
-/**
- * Make the given station the `activeStation`. If
- * `withCrossfade` is true, any currently playing music will crossfade into the first
- * song in the new station.
- *
- *  @param station Station to tune to.
- *  @param withCrossfade if true, if crossfading is enabled, and if music is currenty
- *    playing, the currently playing song will fade into the song in the new station
- *    as soon as it is loaded.
- *
- *  @see activeStation
- */
-
-- (void) setActiveStation: (nonnull Station *)station withCrossfade: (BOOL) withCrossfade;
+//
+///**
+// * Make the given station the `activeStation`. If
+// * `withCrossfade` is true, any currently playing music will crossfade into the first
+// * song in the new station.
+// *
+// *  @param station Station to tune to.
+// *  @param withCrossfade if true, if crossfading is enabled, and if music is currenty
+// *    playing, the currently playing song will fade into the song in the new station
+// *    as soon as it is loaded.
+// *
+// *  @see activeStation
+// */
+//
+//- (void) setActiveStation: (nonnull Station *)station withCrossfade: (BOOL) withCrossfade;
 
 
 
@@ -1268,126 +1269,6 @@ typedef NS_ENUM(NSInteger, MixingAudioPlayerCompletionReason) {
 
 - (void)destroy;
 
-
-///-----------------------------------------------------
-/// @name Deprecated
-///-----------------------------------------------------
-
-
-/**
- @deprecated Clients should use the `StationArray` interface to
- search for stations based on option values.
- 
- Search throught the list of available stations, and return one that has
- options that match those passed in via optionKeysAndValues. This differs from
- getStationWithOptionKey:Value: in that you can specify multiple key/value
- pairs, like so:
- 
-   [player getStationWithOptions: @{ @"genre": @"80s", @"bpm" : @"slow" }
- 
- This method returns the first station with the matching values, or nil.
- 
- @param optionKeysAndValues key value pairs to search for
- @return a station whose options contain optionKeysAndValues
- 
- */
-
-- (nullable Station *) getStationWithOptions: (nonnull NSDictionary *) optionKeysAndValues DEPRECATED_ATTRIBUTE;
-
-/**
- @deprecated Clients should use the `StationArray` interface to
- search for stations based on option values.
- 
- Similar to getStationWithOptions:, but this method returns all the stations
- that match the passed in optionsKeysAndValues.
- 
- @param optionKeysAndValues key value pairs to search for
- @return an array of stations whose options contain optionKeysAndValues. never nil.
- 
- */
-
-- (nullable NSArray<Station *> *) getAllStationsWithOptions: (nonnull NSDictionary *) optionKeysAndValues DEPRECATED_ATTRIBUTE;
-
-
-/**
- * @deprecated Clients should find Station references by pulling them from
- * stationList or localOfflineStationList and then assigning the reference
- * to the activeStation property or calling setActiveStation:withCrossfade:
- *
- *  Finds a station with the given name and assigns it to the `activeStation`.
- *
- *  @param name Station name. Should not be nil.
- *
- *  @return true if a station with the given name is found
- *  @see activeStation
- */
-
-- (BOOL) setActiveStationByName: (nonnull NSString *)name DEPRECATED_ATTRIBUTE;
-
-/**
- * @deprecated Clients should find Station references by pulling them from
- * stationList or localOfflineStationList and then assigning the reference
- * to the activeStation property or calling setActiveStation:withCrossfade:
- *
- * Finds a station with the given name and assigns it to the `activeStation`. If
- * `withCrossfade` is true, any currently playing music will crossfade into the first
- * song in the new station.
- *
- *  @param name Station name. Should not be nil.
- *  @param withCrossfade if true, if crossfading is enabled, and if music is currenty
- *    playing, the currently playing song will fade into the song in the new station
- *    as soon as it is loaded.
- *
- *  @return true if a station with the given name is found
- *  @see activeStation
- */
-
-- (BOOL) setActiveStationByName: (nonnull NSString *)name withCrossfade: (BOOL) withCrossfade DEPRECATED_ATTRIBUTE;
-
-/**
- * @deprecated Clients should find Station references by pulling them from
- * stationList, localOfflineStationList, or remoteOfflineStationList.
- *
- * Search through the list of available stations, and return the one that has
- * an option attribute named 'key' with a string value of 'value'.
- *
- * @param key name of attribute to inspect
- * @param value attribute value that matching station should contain
- */
-
-- (nullable Station *) getStationWithOptionKey:  (nonnull NSString *) key Value: (nonnull NSObject *) value DEPRECATED_ATTRIBUTE;
-
-/**
- * @deprected This method is called internally now and clients need not call it.
- *
- * @param stations list of stations to prepare
- */
-- (void)prepareStations:(nullable NSArray<Station *> *) stations DEPRECATED_ATTRIBUTE;
-
-/**
- * @deprecated Clients should look for the AdaptrAudioPlayerMusicQueuedNotification
- * notification to know when music is queued up in the player, rather than
- * rely on this property, which will be removed in the next major version.
- *
- * Indicates if the SDK has retrieved the next song for playback from the
- * server and is ready to start playing it.
- */
-@property (nonatomic, readonly) BOOL isPreparedToPlay DEPRECATED_ATTRIBUTE;
-
-/**
- @deprecated local detection is no longer performed by this library
- 
- This call to initialize the library and then detect whether the user had any local
- music available for playback.
- 
- @param token public authentication token. Use `@"demo"` during testing/development.
- @param secret private authentication token. Use `@"demo"` during testing/development.
- @param detectLocalMusic when true, the user's local media collection will be queried to
- sample what type of music they listen to
- */
-
-+ (void)setClientToken:(nonnull NSString *)token secret:(nonnull NSString *)secret detectLocalMusic:(BOOL) detectLocalMusic DEPRECATED_ATTRIBUTE;
-
 /**
  * Seek station by give no of seconds.
  * Max allowed value can be obtained by maxSeekableLength
@@ -1437,15 +1318,61 @@ typedef NS_ENUM(NSInteger, MixingAudioPlayerCompletionReason) {
 
 - (void) submitLogsForRemoteDebuggingWithLabel: (nonnull NSString *) label;
 
-
+/**
+ * End point to search for music in the current set of stations for the given token and secret. This does not search the whole catelog.
+ *
+ * @param query Search query
+ * @param stationId optional search query if you wish to narrow the search to a specific station.
+ * @param page results page starts from 0
+ * @param resultsPerPage No of results per page, must be higher then zero default is 20
+ * @param onResult the block that will be called when results are available. The parameter can be null if no results are found.
+ */
 
 -(void) searchForQuery:(NSString *_Nonnull)query
                station:(NSString *_Nullable)stationId
                 pageNo:(NSNumber *_Nonnull)page
-        resultsPerPage:(NSNumber *_Nullable)resultsPerPage;
+        resultsPerPage:(NSNumber *_Nullable)resultsPerPage
+          withCallback:(void (^_Nonnull)(NSArray<Audiofile*>*_Nullable)) onResult;
 
-
+/**
+ * Get track list for a station (named a playlist in client side portal) so that the music can be played on demand
+ * @param stationId An id of the station
+ * @param page results page starts from 0
+ * @param resultsPerPage No of results per page, must be higher then zero default is 20
+ * @param onResult the block that will be called when results are available. The parameter can be null if no results are found.
+ */
 -(void) requestTracksForStation:(NSString *_Nonnull)stationId
                          pageNo:(NSNumber *_Nonnull)page
-                 resultsPerPage:(NSNumber *_Nullable)resultsPerPage;
+                 resultsPerPage:(NSNumber *_Nullable)resultsPerPage
+                   withCallback:(void (^_Nonnull)(NSArray<Audiofile*>*_Nullable)) onResult;
+
+/**
+ *  Load a station in player for playing music sequentially.
+ *  @param station Station to load
+ */
+- (void) loadStation:(Station*_Nonnull) station withCrossfade: (BOOL) withCrossfade;;
+
+/**
+ * Load a playlist into the player.
+ * @param playlist The playlist to load
+ */
+- (void) loadPlayList:(PlayList*_Nonnull) playlist withCrossfade: (BOOL) withCrossfade;;
+/**
+ * Load a list of Audioitems in the player.
+ *  @param audioItems Audiofile items that are obtained from either requestTracksForStation or search or a PlayList etc.
+ */
+- (void) loadAudioItems:(NSArray<Audiofile *>*_Nonnull) audioItems withCrossfade: (BOOL) withCrossfade;;
+
+/**
+ * Get the editor for the current play queue
+ */
+
+-(id<Editor>_Nonnull) getPlayQueueEditor;
+
+/**
+ * View current Play queue
+ */
+-(NSArray<Audiofile *>*_Nonnull) viewCurrentPlayQueue;
+
+    
 @end

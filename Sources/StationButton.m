@@ -96,7 +96,7 @@
         }
 
     } else {
-        [_feedPlayer setActiveStation:_station withCrossfade:_crossfade];
+        [_feedPlayer loadStation:_station withCrossfade:_crossfade];
         
         if (_playOnClick) {
             [_feedPlayer play];

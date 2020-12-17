@@ -269,7 +269,7 @@
         if (![_player.activeStation isEqual:station]) {
             //NSLog(@"Changing station to %@", station);
             
-            [_player setActiveStation:station withCrossfade:YES];
+            [_player loadStation:station withCrossfade:YES];
         }
 
         [_player play];
