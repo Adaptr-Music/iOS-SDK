@@ -6,7 +6,7 @@
 //  Copyright ©   2020 Adaptr All rights reserved.
 //
 
-#define ADAPTR_CLIENT_VERSION @"0.1.1"
+#define ADAPTR_CLIENT_VERSION @"0.1.2"
 
 // All public headers
 

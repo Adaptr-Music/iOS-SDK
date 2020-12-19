@@ -713,6 +713,7 @@ typedef NS_ENUM(NSInteger, MixingAudioPlayerCompletionReason) {
  */
 - (void)play;
 
+
 /**
  * Start playback of specific song. This method only works with
  * on-demand stations.
@@ -1352,11 +1353,11 @@ typedef NS_ENUM(NSInteger, MixingAudioPlayerCompletionReason) {
  */
 - (void) loadStation:(Station*_Nonnull) station withCrossfade: (BOOL) withCrossfade;;
 
-/**
+/*
  * Load a playlist into the player.
  * @param playlist The playlist to load
  */
-- (void) loadPlayList:(PlayList*_Nonnull) playlist withCrossfade: (BOOL) withCrossfade;;
+//- (void) loadPlayList:(PlayList*_Nonnull) playlist withCrossfade: (BOOL) withCrossfade;;
 /**
  * Load a list of Audioitems in the player.
  *  @param audioItems Audiofile items that are obtained from either requestTracksForStation or search or a PlayList etc.
@@ -1374,5 +1375,41 @@ typedef NS_ENUM(NSInteger, MixingAudioPlayerCompletionReason) {
  */
 -(NSArray<Audiofile *>*_Nonnull) viewCurrentPlayQueue;
 
-    
+/**
+ * Get playlists saved for this user from the server. These playlists do not contain audio tracks, see [player getTracksForPlaylist:list] for more info
+ * @param onResult Completion handler for completed request.
+ */
+-(void) getSavedPlaylists:(void (^_Nonnull)(NSArray<PlayList*>*_Nullable)) onResult;
+
+/**
+ * When @see getSavedPlaylists is called the playlist info does not contain tracks to get the audioTracks for Playlist call this method.
+ * @param playlist For which audio files are to be retrieved.
+ * @param onResult Completion handler will return nil if nothing found or an error has occurred while trying to fetch tracks
+ */
+-(void) getTracksForPlaylist: (PlayList* _Nonnull) playlist withBlock:(void (^_Nonnull)(PlayList* _Nonnull)) onResult;
+
+/**
+ * Delete a playlist previously saved by the user
+ * @param playlist Playlist to be deleted.
+ */
+-(void) deletePlaylist:(PlayList* _Nonnull) playlist;
+/**
+ * Get a list of users Favorites
+ * @param onResult The completion handler, will return nil of nothing found or an error has occurred while trying to fetch tracks
+ * @param page Page no of results, starts with 0
+ * @param resultsPerPage No of results per page, cannot be 0
+ */
+-(void) requestUserFavoritesWithPageNo:(NSNumber*_Nullable)page resultsPerPage:(NSNumber*_Nullable)resultsPerPage completionBlock:(void (^_Nonnull)(NSArray<Audiofile *> *_Nonnull))onResult;
+
+/**
+ * Favorite and audioItem
+ * @param audioItem Item to favorite
+ */
+-(void) favoriteItem:(Audiofile *_Nonnull) audioItem;
+/**
+ * UnFavorite a previously favorite Item
+ * @param audioItem Item to unFavorite
+ */
+-(void) unFavoriteItem:(Audiofile * _Nonnull)audioItem;
+
 @end

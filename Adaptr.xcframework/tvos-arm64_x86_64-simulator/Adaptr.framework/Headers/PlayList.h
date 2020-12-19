@@ -87,12 +87,6 @@ extern NSString * _Nonnull const AdaptrPlaylistChangedNotification;
 @property (readonly) NSString * _Nonnull name;
 
 /**
- * A short description of playlist
- */
-
-@property (readonly) NSString * _Nullable playListDescription;
-
-/**
  * Playlist Editor to be used for manipulation of the playlist
  */
 
@@ -101,8 +95,13 @@ extern NSString * _Nonnull const AdaptrPlaylistChangedNotification;
 /**
  * Constructor to create new playlists. Internal use only.
  */
-- (id _Nonnull) initWithName: (NSString*_Nonnull) name andDescription:(NSString*_Nonnull) description andAudioFiles:(NSArray<Audiofile*>*_Nullable) audiofiles;
-
+- (id _Nonnull) initWithJson: (NSString* _Nonnull) json;
+/**
+ *  Create a new playlist
+ *  @param name Name of the Playlist
+ *  @param audiofiles Files to be added to the playlist
+ */
+- (id _Nonnull) initWithName: (NSString*_Nonnull) name andAudioFiles:(NSArray<Audiofile*>*_Nullable) audiofiles;
 
 @end
     
