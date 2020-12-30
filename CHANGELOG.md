@@ -1,3 +1,5 @@
+- v0.1.3
+  - Add support for previous tracks and bug fixs.
 - v0.1.2
   - Add support for client side Playlists and song favoriting.
 - v0.1.1

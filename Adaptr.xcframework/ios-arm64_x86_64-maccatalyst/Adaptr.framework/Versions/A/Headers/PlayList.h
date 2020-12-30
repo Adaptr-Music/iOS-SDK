@@ -26,9 +26,19 @@ extern NSString * _Nonnull const AdaptrPlaylistChangedNotification;
 @protocol Editor<NSObject>
 
 /**
- * Get the fist Item in the play list
+ * Get the first Item in the play list
  */
 -(Audiofile*_Nullable) first;
+
+/**
+ * Get the first Item in the play list
+ */
+-(NSUInteger) count;
+
+/**
+ * Get the last Item in the play list
+ */
+-(Audiofile*_Nullable) last;
 /**
  * Shuffle the playlist in random order
  */
@@ -48,29 +58,36 @@ extern NSString * _Nonnull const AdaptrPlaylistChangedNotification;
 /**
  * Add a single file
  */
-
--(void) addFiletoPlaylist:(Audiofile*_Nonnull) file;
+- (void)addFiletoPlaylist:(Audiofile *_Nonnull)file ;
+/**
+ * Add a single file at an index
+ */
+-(void) addFiletoPlaylist:(Audiofile*_Nonnull) file atIndex:(NSUInteger)index;
 
 /**
  * Remove an item fron playlist
  */
 -(void) removeFromPlaylist:(Audiofile*_Nonnull) file;
 /**
- * Save changes to the playlist, this should be called eveytime any changes are made, even on the current playlist
+ * Save changes to the playlist, this should be called everytime any changes are made, even on the current playlist
  */
 -(void) saveChanges;
 
 /**
- * Change the location of items insode the playlist.
+ * Change the location of items inside the playlist.
  */
 
 -(void) moveItem:(Audiofile*_Nonnull) file toIndex:(int) index;
 
+/**
+ * Get a copy of list as an NSArray
+ */
+-(NSArray*_Nonnull) getPlayListAsArray;
 
 @end
 
 /**
- * Plalist are user created lists of songs and do not correspond to the playlists created on the server side. Playlists created in client portal are treated as on demand stations in SDKs
+ * Playlists are user created lists of songs and do not correspond to the playlists created on the server side. Playlists created in client portal are treated as on demand stations in SDKs
  */
 
 @interface PlayList : NSObject 

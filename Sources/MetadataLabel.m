@@ -84,6 +84,8 @@
     if ((state == AdaptrAudioPlayerPlaybackStateComplete) ||
         (state == AdaptrAudioPlayerPlaybackStateReadyToPlay)) {
         [self updateToBlankText];
+    } else if (state == AdaptrAudioPlayerPlaybackStatePlaying){
+        [self updateText];
     }
 }
 
