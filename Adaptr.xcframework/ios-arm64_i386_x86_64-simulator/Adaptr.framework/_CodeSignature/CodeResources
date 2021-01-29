@@ -22,11 +22,11 @@
 		</data>
 		<key>Headers/AdaptrAudioPlayer.h</key>
 		<data>
-		gIEbulLSKcQ/Epjr26CRKHJAGlM=
+		ztCNxrzFGnI5ed2uwINvR36gvak=
 		</data>
 		<key>Headers/AdaptrCore.h</key>
 		<data>
-		U2GCb6JI9hQdFsXrS4M73J2Up+o=
+		YeBbYnk8CFZiaAL8qS7DgZQoCWk=
 		</data>
 		<key>Headers/AdaptrShareButton.h</key>
 		<data>
@@ -118,7 +118,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ntwTuDU6AjHqVxPLIvzCSYjPWoE=
+		PIemN5B0bw469NtuDYJvQnogByk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -175,22 +175,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			gIEbulLSKcQ/Epjr26CRKHJAGlM=
+			ztCNxrzFGnI5ed2uwINvR36gvak=
 			</data>
 			<key>hash2</key>
 			<data>
-			GZHVmBJ54vnlN9vOUuxC2fuhM5HAE75gHzlrGbQgsUs=
+			0rEVQERqEpGSiOBK3MSH3R96DzfApGe4boHkn8S6Vn8=
 			</data>
 		</dict>
 		<key>Headers/AdaptrCore.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			U2GCb6JI9hQdFsXrS4M73J2Up+o=
+			YeBbYnk8CFZiaAL8qS7DgZQoCWk=
 			</data>
 			<key>hash2</key>
 			<data>
-			iq9Ltvuf6+ofnq6z2VoVTtg7+9QhOhPWSy6LCLL/5zs=
+			i+IqnclmYaw9Cuplm7Vrs1b3al/S3AK4RXeo7V4YgaQ=
 			</data>
 		</dict>
 		<key>Headers/AdaptrShareButton.h</key>

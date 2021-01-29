@@ -712,14 +712,19 @@ typedef NS_ENUM(NSInteger, MixingAudioPlayerCompletionReason) {
  * an `AdaptrAudioPlayerPreCachingCompleted` notification.
  */
 - (void)prepareToPlay;
-
+/**
+ * Restart current track
+ */
+- (void)restart;
+/**
+ * Go back to previous track.
+ */
 - (void)previous;
 
 /**
  * Starts retrieval and playback of music in the active station.
  */
 - (void)play;
-
 
 /**
  * Start playback of specific song. This method only works with
