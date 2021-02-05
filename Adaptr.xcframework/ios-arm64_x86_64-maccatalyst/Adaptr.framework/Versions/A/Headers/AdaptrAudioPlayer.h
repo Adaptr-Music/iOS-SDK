@@ -1365,17 +1365,21 @@ typedef NS_ENUM(NSInteger, MixingAudioPlayerCompletionReason) {
  *  Load a station in player for playing music sequentially.
  *  @param station Station to load
  */
-- (void) loadStation:(Station*_Nonnull) station withCrossfade: (BOOL) withCrossfade;;
+- (void) loadStation:(Station*_Nonnull) station withCrossfade: (BOOL) withCrossfade;
+
+/**
+ * Load a list of Audioitems in the player.
+ *  @param audioItems Audiofile items that are obtained from either requestTracksForStation or search or a PlayList etc.
+ */
+
+- (void)loadAudioItems:(NSArray<Audiofile *>*_Nonnull)audioItems startIndexAt:(NSUInteger)index withCrossfade:(BOOL)withCrossfade;;
 
 /*
  * Load a playlist into the player.
  * @param playlist The playlist to load
  */
 //- (void) loadPlayList:(PlayList*_Nonnull) playlist withCrossfade: (BOOL) withCrossfade;;
-/**
- * Load a list of Audioitems in the player.
- *  @param audioItems Audiofile items that are obtained from either requestTracksForStation or search or a PlayList etc.
- */
+
 - (void) loadAudioItems:(NSArray<Audiofile *>*_Nonnull) audioItems withCrossfade: (BOOL) withCrossfade;;
 
 /**

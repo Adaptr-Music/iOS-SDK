@@ -25,6 +25,25 @@ extern NSString * _Nonnull const AdaptrPlaylistChangedNotification;
  */
 @protocol Editor<NSObject>
 
+-(NSUInteger ) index;
+
+-(Audiofile* _Nullable) previous;
+
+-(Audiofile*_Nullable) decrementCurrent ;
+/**
+ * Get the next Item in the play list
+ */
+-(Audiofile*_Nullable) next;
+
+/**
+ * increment Current Item
+ */
+-(Audiofile*_Nullable) incrementCurrent;
+/**
+ * returns true if last item is current
+ * @return true if last item is current
+ */
+-(BOOL) isCurrentLast;
 /**
  * Get the first Item in the play list
  */
@@ -102,6 +121,12 @@ extern NSString * _Nonnull const AdaptrPlaylistChangedNotification;
  *  Playlist  name
  */
 @property (readonly) NSString * _Nonnull name;
+
+/**
+ * Current item of the playlist
+ */
+
+@property Audiofile * _Nullable current;
 
 /**
  * Playlist Editor to be used for manipulation of the playlist

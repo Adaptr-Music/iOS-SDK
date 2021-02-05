@@ -22,11 +22,11 @@
 		</data>
 		<key>Headers/AdaptrAudioPlayer.h</key>
 		<data>
-		ztCNxrzFGnI5ed2uwINvR36gvak=
+		3cGtVsUqWlhiX6z9a2W6ZBe4c4U=
 		</data>
 		<key>Headers/AdaptrCore.h</key>
 		<data>
-		YeBbYnk8CFZiaAL8qS7DgZQoCWk=
+		W53+V+19/S0yWD61QVKD5vM+RZQ=
 		</data>
 		<key>Headers/AdaptrSimulcastStreamer.h</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Headers/PlayList.h</key>
 		<data>
-		kHVXk9un9y3Ei/ikGFXPq0VNIR4=
+		WZTVH35+POS7hVNsmvx49aw0vgw=
 		</data>
 		<key>Headers/PlayPauseButton.h</key>
 		<data>
@@ -147,14 +147,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0rEVQERqEpGSiOBK3MSH3R96DzfApGe4boHkn8S6Vn8=
+			Zi+GwsbVQfatzIe1E6J/wNUc3q9Kgi5JTeVAq9GbEaY=
 			</data>
 		</dict>
 		<key>Headers/AdaptrCore.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			i+IqnclmYaw9Cuplm7Vrs1b3al/S3AK4RXeo7V4YgaQ=
+			MZGQGZtJPb+wwpbYRyY+tdcXKWZY035L+6+9M74sL7I=
 			</data>
 		</dict>
 		<key>Headers/AdaptrSimulcastStreamer.h</key>
@@ -224,7 +224,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3s0f/9BrHLN2Cz3gQ8gWihpTe/ldqMx+nKuQhB1eLTA=
+			WAnCIHgDZtjqYesI3d920Vph4IuLsxFLVTa+Y+ZcqPI=
 			</data>
 		</dict>
 		<key>Headers/PlayPauseButton.h</key>

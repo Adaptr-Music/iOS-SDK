@@ -1,3 +1,7 @@
+- v0.1.5
+  - Add support for playing playlists with index and bug fixes.
+- v0.1.4
+  - Bug fixs for clientId.
 - v0.1.3
   - Add support for previous tracks and bug fixs.
 - v0.1.2
