@@ -727,6 +727,11 @@ typedef NS_ENUM(NSInteger, MixingAudioPlayerCompletionReason) {
 - (void)play;
 
 /**
+ * Begin playback of previously loaded items but at  a given index.
+ */
+- (void)playFromIndex:(NSUInteger) index;
+
+/**
  * Start playback of specific song. This method only works with
  * on-demand stations.
  *
@@ -1370,6 +1375,7 @@ typedef NS_ENUM(NSInteger, MixingAudioPlayerCompletionReason) {
 /**
  * Load a list of Audioitems in the player.
  *  @param audioItems Audiofile items that are obtained from either requestTracksForStation or search or a PlayList etc.
+ *  @param index index to start playing the songs at.
  */
 
 - (void)loadAudioItems:(NSArray<Audiofile *>*_Nonnull)audioItems startIndexAt:(NSUInteger)index withCrossfade:(BOOL)withCrossfade;;

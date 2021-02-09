@@ -1,3 +1,5 @@
+- v0.1.6
+  - Bug fixes with complete state, playlists, volume normalization now defaults to off.
 - v0.1.5
   - Add support for playing playlists with index and bug fixes.
 - v0.1.4
