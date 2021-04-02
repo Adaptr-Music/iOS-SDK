@@ -1,3 +1,5 @@
+- v0.1.7 
+  - Bug fix for onUnavailable not being called outside US
 - v0.1.6
   - Bug fixes with complete state, playlists, volume normalization now defaults to off.
 - v0.1.5

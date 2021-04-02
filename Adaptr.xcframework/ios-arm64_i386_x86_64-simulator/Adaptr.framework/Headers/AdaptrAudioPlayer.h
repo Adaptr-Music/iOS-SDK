@@ -162,6 +162,11 @@ extern NSString *const FMAudioFormatMP3;
  */
 extern NSString *const FMAudioFormatAAC;
 
+typedef NS_ENUM(NSInteger, MockLocation) {
+    MockLocation_US,
+    MockLocation_EU
+};
+
 /**
  * @enum This enum represents the various states the AdaptrAudioPlayer can
  * be in, as identified by the `[AdaptrAudioPlayer playbackState]`.
@@ -1436,4 +1441,11 @@ typedef NS_ENUM(NSInteger, MixingAudioPlayerCompletionReason) {
  */
 -(void) unFavoriteItem:(Audiofile * _Nonnull)audioItem;
 
+/**
+ * Set a location to mock for testing location. Development purpose only.
+ * May stop working at any time, if too many requests are received with Mocked location.
+ * @param mockLocation US or EU(Outside US)
+ */
+
++(void) setMockLocation:(MockLocation)mockLocation;
 @end
