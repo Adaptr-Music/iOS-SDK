@@ -1448,4 +1448,5 @@ typedef NS_ENUM(NSInteger, MixingAudioPlayerCompletionReason) {
  */
 
 +(void) setMockLocation:(MockLocation)mockLocation;
+
 @end
