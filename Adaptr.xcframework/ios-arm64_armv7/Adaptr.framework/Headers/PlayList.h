@@ -111,8 +111,18 @@ extern NSString * _Nonnull const AdaptrPlaylistChangedNotification;
 
 @interface PlayList : NSObject 
 
+/**
+ * True if current song should loop
+ */
 
-/*
+@property (readwrite) BOOL loopCurrent;
+
+/**
+ * True if playlist should loop
+ */
+
+@property (readwrite) BOOL loopAll;
+/**
  * Playlist identifier.
  */
 @property (readonly) NSString * _Nonnull playListId;

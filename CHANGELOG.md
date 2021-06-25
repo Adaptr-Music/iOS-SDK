@@ -1,3 +1,5 @@
+- v0.1.10 
+  - Add looping options 
 - v0.1.7 
   - Bug fix for onUnavailable not being called outside US
 - v0.1.6

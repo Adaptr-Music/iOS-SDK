@@ -167,6 +167,12 @@ typedef NS_ENUM(NSInteger, MockLocation) {
     MockLocation_EU
 };
 
+typedef NS_ENUM(NSInteger, LoopOptions) {
+    LoopCurrent,
+    LoopAll,
+    LoopNone
+};
+
 /**
  * @enum This enum represents the various states the AdaptrAudioPlayer can
  * be in, as identified by the `[AdaptrAudioPlayer playbackState]`.
@@ -1383,7 +1389,7 @@ typedef NS_ENUM(NSInteger, MixingAudioPlayerCompletionReason) {
  *  @param index index to start playing the songs at.
  */
 
-- (void)loadAudioItems:(NSArray<Audiofile *>*_Nonnull)audioItems startIndexAt:(NSUInteger)index withCrossfade:(BOOL)withCrossfade;;
+- (void)loadAudioItems:(NSArray<Audiofile *>*_Nonnull)audioItems startIndexAt:(NSUInteger)index withCrossfade:(BOOL)withCrossfade loopOptions:(LoopOptions) options;
 
 /*
  * Load a playlist into the player.
@@ -1391,7 +1397,13 @@ typedef NS_ENUM(NSInteger, MixingAudioPlayerCompletionReason) {
  */
 //- (void) loadPlayList:(PlayList*_Nonnull) playlist withCrossfade: (BOOL) withCrossfade;;
 
-- (void) loadAudioItems:(NSArray<Audiofile *>*_Nonnull) audioItems withCrossfade: (BOOL) withCrossfade;;
+- (void) loadAudioItems:(NSArray<Audiofile *>*_Nonnull) audioItems withCrossfade: (BOOL) withCrossfade loopOptions:(LoopOptions) options;
+
+/**
+ * Change the looping behaviour of the current playlist.
+ */
+
+- (void) setLooping:(LoopOptions) options;
 
 /**
  * Get the editor for the current play queue
