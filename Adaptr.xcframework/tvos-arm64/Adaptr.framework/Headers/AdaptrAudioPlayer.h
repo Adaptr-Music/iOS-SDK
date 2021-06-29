@@ -1403,7 +1403,7 @@ typedef NS_ENUM(NSInteger, MixingAudioPlayerCompletionReason) {
  * Change the looping behaviour of the current playlist.
  */
 
-- (void) setLooping:(LoopOptions) options;
+- (void) setLoopOptions:(LoopOptions) options;
 
 /**
  * Get the editor for the current play queue
