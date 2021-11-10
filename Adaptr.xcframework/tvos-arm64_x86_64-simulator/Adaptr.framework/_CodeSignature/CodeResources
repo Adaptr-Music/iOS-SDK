@@ -22,11 +22,11 @@
 		</data>
 		<key>Headers/AdaptrAudioPlayer.h</key>
 		<data>
-		Oxe9K4TjaKFWMajVYtM/i+UIEds=
+		zZGwBrZjvOyTQM5bS/Y4NbZLuTI=
 		</data>
 		<key>Headers/AdaptrCore.h</key>
 		<data>
-		tFihOmT9UfsN5P1EKx0TJqEpRpw=
+		L8I/rSfxoRXPuc+vpFspzthevJI=
 		</data>
 		<key>Headers/AdaptrSimulcastStreamer.h</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		oOkVtbS1CwZr4PIHUJw2ECE0DJQ=
+		dmLqDB2gBGjGgQFXTRwfUhMDNqA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -147,14 +147,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			o+DKpdjTxlyxB9CwvWsihJL4L//dV8rYpyDBrBa+sm0=
+			c8ZqAi0r3MynNfnbBnu7NmrhnCvdZA/rjT/v2WeqTNc=
 			</data>
 		</dict>
 		<key>Headers/AdaptrCore.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NBNZbYF83/Wiu25JBPsHdlfby2TP7Fnbwp8yttKTpVc=
+			7dakpixMOc1Hz2WX7PJLhjRT1rnrpea5hV/y5qLEI04=
 			</data>
 		</dict>
 		<key>Headers/AdaptrSimulcastStreamer.h</key>

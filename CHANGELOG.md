@@ -1,3 +1,5 @@
+- v0.1.12 
+  - Update play time reporting to ignore trims.
 - v0.1.10 
   - Add looping options 
 - v0.1.7 

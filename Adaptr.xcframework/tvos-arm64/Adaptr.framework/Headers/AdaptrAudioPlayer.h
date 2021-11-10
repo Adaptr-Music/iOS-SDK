@@ -163,13 +163,28 @@ extern NSString *const FMAudioFormatMP3;
 extern NSString *const FMAudioFormatAAC;
 
 typedef NS_ENUM(NSInteger, MockLocation) {
+    /**
+     * Location in US
+     */
     MockLocation_US,
+    /**
+     * Location outside US
+     */
     MockLocation_EU
 };
 
 typedef NS_ENUM(NSInteger, LoopOptions) {
+    /**
+     * Loop the current song
+     */
     LoopCurrent,
+    /**
+     * Loop all songs in the playlist
+     */
     LoopAll,
+    /**
+     * Do no loop anything
+     */
     LoopNone
 };
 
@@ -299,6 +314,7 @@ typedef NS_ENUM(NSInteger, MixingAudioPlayerCompletionReason) {
 
 - (void) mixingAudioPlayerItemDidFinishPlayback: (nonnull Audiofile *) item
                                     dueToReason: (MixingAudioPlayerCompletionReason) reason
+                                  withTotalTime: (CMTime) playedTime
                                        andError: ( NSError *_Nullable) error;
 
 /**
